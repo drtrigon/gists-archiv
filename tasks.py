@@ -52,8 +52,7 @@ def install_pywikibot(ctx):
     job = [
     "sudo apt-get install git git-review",
     "git clone --branch 2.0 --recursive https://gerrit.wikimedia.org/r/pywikibot/core.git",
-    "cd core/",
-    "python pwb.py basic",
+    "cd core/; python pwb.py basic",
     ]
     install(ctx, job)
 
@@ -61,7 +60,7 @@ def install_pywikibot(ctx):
 @task
 def install_file_metadata_bot(ctx):
     job = [
-    "$ sudo apt-get install libmagickwand-dev",
-    "$ wget https://gist.githubusercontent.com/AbdealiJK/a94fc0d0445c2ad715d9b1b95ec2ba03/raw/492ef4076d5af74b4855fd26f6810f14cff07ec9/file_metadata_bot.py",
+    "sudo apt-get install libmagickwand-dev",
+    "cd core/; wget https://gist.githubusercontent.com/AbdealiJK/a94fc0d0445c2ad715d9b1b95ec2ba03/raw/492ef4076d5af74b4855fd26f6810f14cff07ec9/file_metadata_bot.py",
     ]
     install(ctx, job)
