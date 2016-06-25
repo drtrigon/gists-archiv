@@ -57,7 +57,7 @@ def run(cmd):
 
 
 def main():
-    for cmd in install_spm:
+    for cmd in install:
         print ("--- " * 10), "\n", cmd, "\n", ("--- " * 10)
         raw_input("[Enter] to continue, [Ctrl]+C to stop ...")
         run(cmd)
