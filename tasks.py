@@ -26,7 +26,7 @@ def install_spm(ctx):
     "wget https://bootstrap.pypa.io/get-pip.py; sudo python get-pip.py",
     "pip show pip",
     "sudo apt-get install python-appdirs python-magic python-numpy python-scipy python-matplotlib python-wand python-skimage python-zbar",
-    "sudo apt-get install cmake libboost-python-dev liblzma-dev libjpeg-dev libz-dev",
+    "sudo apt-get install cmake libboost-python-dev liblzma-dev libjpeg-dev libz-dev",    # for dlib, pillow compilation
     "sudo pip install file-metadata --upgrade",
     "python -c'import file_metadata; print file_metadata.__version__'",
     ]
@@ -52,7 +52,7 @@ def install_pywikibot(ctx):
     job = [
     "sudo apt-get install git git-review",
     "git clone --branch 2.0 --recursive https://gerrit.wikimedia.org/r/pywikibot/core.git",
-    "cd core/; python pwb.py basic",
+    "cd core/; python pwb.py basic",    # issue: ctx.run stops after this line
     ]
     install(ctx, job)
 
