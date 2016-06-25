@@ -26,7 +26,7 @@ def install_spm(ctx):
     "wget https://bootstrap.pypa.io/get-pip.py; sudo python get-pip.py",
     "pip show pip",
     "sudo apt-get install python-appdirs python-magic python-numpy python-scipy python-matplotlib python-wand python-skimage python-zbar",
-    "sudo apt-get install cmake libboost-python-dev liblzma-dev",
+    "sudo apt-get install cmake libboost-python-dev liblzma-dev libjpeg-dev libz-dev",
     "sudo pip install file-metadata --upgrade",
     "python -c'import file_metadata; print file_metadata.__version__'",
     ]
