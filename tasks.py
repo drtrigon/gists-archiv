@@ -73,6 +73,22 @@ def install_file_metadata_deps_pip(ctx, yes=False):
     ]
     install(ctx, job, yes=yes)
 
+# Test through github
+@task
+def install_file_metadata_git(ctx, yes=False):
+    install_pip(ctx, yes=yes)
+    install_file_metadata_deps_pip(ctx, yes=yes)
+    p   = params(yes=yes)
+    job = [
+    "sudo apt-get %(yes)s install git" % p,
+    "sudo apt-get %(yes)s install libzbar-dev" % p,
+    "git clone https://github.com/AbdealiJK/file-metadata.git",
+    "cd file-metadata/; sudo pip install -r requirements.txt",
+    "cd file-metadata/; python -c'import file_metadata; print file_metadata.__version__'",
+    ]
+    install(ctx, job, yes=yes)
+    # need symlinks in core/ !
+
 # Installation of pywikibot
 @task
 def install_pywikibot(ctx, yes=False):
