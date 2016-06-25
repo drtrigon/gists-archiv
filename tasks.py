@@ -106,6 +106,6 @@ def install_file_metadata_bot(ctx, yes=False):
     p   = params(yes=yes)
     job = [
     "sudo apt-get %(yes)s install libmagickwand-dev" % p,
-    "cd core/; wget https://gist.githubusercontent.com/AbdealiJK/a94fc0d0445c2ad715d9b1b95ec2ba03/raw/1dcd1fb8c168608c28e20ff50e9284700f61b90d/file_metadata_bot.py",
+    #"cd core/; wget https://gist.githubusercontent.com/AbdealiJK/a94fc0d0445c2ad715d9b1b95ec2ba03/raw/1dcd1fb8c168608c28e20ff50e9284700f61b90d/file_metadata_bot.py",
     ]
     install(ctx, job, yes=yes)
