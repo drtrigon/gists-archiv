@@ -5,10 +5,10 @@
 # Kubuntu VirtualBox guest as described in User:DrTrigon/file-metadata:
 # https://commons.wikimedia.org/wiki/User:DrTrigon/file-metadata
 #
-# Usage: invoke install_file_metadata_spm install_pywikibot install_file_metadata_bot; invoke install_file_metadata_bot
-#        invoke install_file_metadata_pip install_pywikibot install_file_metadata_bot; invoke install_file_metadata_bot
-#        invoke install_file_metadata_pip --yes install_pywikibot --yes install_file_metadata_bot --yes; invoke install_file_metadata_bot --yes
-#        invoke install_pywikibot install_file_metadata_git install_file_metadata_bot; invoke install_file_metadata_bot
+# Usage: $ invoke install_file_metadata_spm install_pywikibot install_file_metadata_bot; invoke install_file_metadata_bot
+#        $ invoke install_file_metadata_pip install_pywikibot install_file_metadata_bot; invoke install_file_metadata_bot
+#        $ invoke install_file_metadata_pip --yes install_pywikibot --yes install_file_metadata_bot --yes; invoke install_file_metadata_bot --yes
+#        $ invoke install_pywikibot install_file_metadata_git install_file_metadata_bot; invoke install_file_metadata_git install_file_metadata_bot
 #
 # Inspired by https://github.com/pypa/get-pip/blob/master/get-pip.py
 #         and http://www.pyinvoke.org/
@@ -83,7 +83,7 @@ def install_file_metadata_git(ctx, yes=False):
     job = [
     "git clone https://github.com/AbdealiJK/file-metadata.git",
     "sudo apt-get %(yes)s install libzbar-dev" % p,
-    "cd file-metadata/; sudo pip install -r requirements.txt",
+    "cd file-metadata/; sudo pip install -r requirements.txt --upgrade",
     "cd file-metadata/; python -c'import file_metadata; print file_metadata.__version__'",
     "cd core/; ln -s ../file-metadata/file_metadata file_metadata",
     ]
