@@ -7,8 +7,8 @@
 #
 # Usage: $ invoke install_file_metadata_spm install_pywikibot install_file_metadata_bot; invoke install_file_metadata_bot
 #        $ invoke install_file_metadata_pip install_pywikibot install_file_metadata_bot; invoke install_file_metadata_bot
-#        $ invoke install_file_metadata_pip --yes install_pywikibot --yes install_file_metadata_bot --yes; invoke install_file_metadata_bot --yes
 #        $ invoke install_pywikibot install_file_metadata_git install_file_metadata_bot; invoke install_file_metadata_git install_file_metadata_bot
+#        $ invoke install_pywikibot --yes install_file_metadata_git --yes; invoke install_file_metadata_git --yes
 #
 # Inspired by https://github.com/pypa/get-pip/blob/master/get-pip.py
 #         and http://www.pyinvoke.org/
@@ -47,8 +47,7 @@ def install_pip(ctx, yes=False):
 def install_file_metadata_deps_spm(ctx, yes=False):
     p   = params(yes=yes)
     job = [
-    "sudo apt-get %(yes)s install python-appdirs python-magic python-numpy python-scipy python-matplotlib python-wand python-skimage python-zbar" % p,
-    "sudo apt-get %(yes)s install cmake libboost-python-dev liblzma-dev libjpeg-dev libz-dev" % p,    # for dlib, pillow compilation
+    "sudo apt-get %(yes)s install python-appdirs python-magic python-numpy python-scipy python-matplotlib python-wand python-skimage python-zbar cmake libboost-python-dev liblzma-dev libjpeg-dev libz-dev" % p,
     ]
     install(ctx, job, yes=yes)
 
