@@ -5,8 +5,8 @@
 # Kubuntu VirtualBox guest as described in User:DrTrigon/file-metadata:
 # https://commons.wikimedia.org/wiki/User:DrTrigon/file-metadata
 #
-# Usage: invoke install_spm install_pywikibot install_file_metadata_bot; invoke install_file_metadata_bot
-#        invoke install_pip install_pywikibot install_file_metadata_bot; invoke install_file_metadata_bot
+# Usage: invoke install_file_metadata_spm install_pywikibot install_file_metadata_bot; invoke install_file_metadata_bot
+#        invoke install_file_metadata_pip install_pywikibot install_file_metadata_bot; invoke install_file_metadata_bot
 #
 # Inspired by https://github.com/pypa/get-pip/blob/master/get-pip.py
 #         and http://www.pyinvoke.org/
@@ -27,22 +27,11 @@ def params(*args, **kwargs):
 
 # Test through system package management
 @task
-def install_spm(ctx, yes=False):
-    p   = params(yes=yes)
-    job = [
-    "sudo apt-get %(yes)s update" % p,
-    "sudo apt-get %(yes)s purge python-pip; sudo apt-get %(yes)s autoremove" % p,
-    "wget https://bootstrap.pypa.io/get-pip.py; sudo python get-pip.py",
-    "pip show pip",
-    "sudo apt-get %(yes)s install python-appdirs python-magic python-numpy python-scipy python-matplotlib python-wand python-skimage python-zbar" % p,
-    "sudo apt-get %(yes)s install cmake libboost-python-dev liblzma-dev libjpeg-dev libz-dev" % p,    # for dlib, pillow compilation
-    "sudo pip install file-metadata --upgrade",
-    "python -c'import file_metadata; print file_metadata.__version__'",
-    ]
-    install(ctx, job, yes=yes)
+def install_file_metadata_spm(ctx, yes=False):
+    install_pip(ctx, yes=yes)
+    install_file_metadata_deps_spm(ctx, yes=yes)
+    install_file_metadata(ctx, yes=yes)
 
-# Test through pip
-@task
 def install_pip(ctx, yes=False):
     p   = params(yes=yes)
     job = [
@@ -50,9 +39,36 @@ def install_pip(ctx, yes=False):
     "sudo apt-get %(yes)s purge python-pip; sudo apt-get %(yes)s autoremove" % p,
     "wget https://bootstrap.pypa.io/get-pip.py; sudo python get-pip.py",
     "pip show pip",
-    "sudo apt-get %(yes)s install perl openjdk-7-jre python-dev pkg-config libfreetype6-dev libpng12-dev liblapack-dev libblas-dev gfortran cmake libboost-python-dev liblzma-dev libjpeg-dev python-virtualenv" % p,
+    ]
+    install(ctx, job, yes=yes)
+
+def install_file_metadata_deps_spm(ctx, yes=False):
+    p   = params(yes=yes)
+    job = [
+    "sudo apt-get %(yes)s install python-appdirs python-magic python-numpy python-scipy python-matplotlib python-wand python-skimage python-zbar" % p,
+    "sudo apt-get %(yes)s install cmake libboost-python-dev liblzma-dev libjpeg-dev libz-dev" % p,    # for dlib, pillow compilation
+    ]
+    install(ctx, job, yes=yes)
+
+def install_file_metadata(ctx, yes=False):
+    p   = params(yes=yes)
+    job = [
     "sudo pip install file-metadata --upgrade",
     "python -c'import file_metadata; print file_metadata.__version__'",
+    ]
+    install(ctx, job, yes=yes)
+
+# Test through pip
+@task
+def install_file_metadata_pip(ctx, yes=False):
+    install_pip(ctx, yes=yes)
+    install_file_metadata_deps_pip(ctx, yes=yes)
+    install_file_metadata(ctx, yes=yes)
+
+def install_file_metadata_deps_pip(ctx, yes=False):
+    p   = params(yes=yes)
+    job = [
+    "sudo apt-get %(yes)s install perl openjdk-7-jre python-dev pkg-config libfreetype6-dev libpng12-dev liblapack-dev libblas-dev gfortran cmake libboost-python-dev liblzma-dev libjpeg-dev python-virtualenv" % p,
     ]
     install(ctx, job, yes=yes)
 
