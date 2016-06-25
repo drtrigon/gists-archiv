@@ -5,6 +5,9 @@
 # Kubuntu VirtualBox guest as described in User:DrTrigon/file-metadata:
 # https://commons.wikimedia.org/wiki/User:DrTrigon/file-metadata
 #
+# Usage: invoke install_spm install_pywikibot install_file_metadata_bot; invoke install_file_metadata_bot
+#        invoke install_pip install_pywikibot install_file_metadata_bot; invoke install_file_metadata_bot
+#
 # Inspired by https://github.com/pypa/get-pip/blob/master/get-pip.py
 #         and http://www.pyinvoke.org/
 
@@ -41,7 +44,7 @@ def install_pip(ctx):
     "wget https://bootstrap.pypa.io/get-pip.py; sudo python get-pip.py",
     "pip show pip",
     "sudo apt-get install perl openjdk-7-jre python-dev pkg-config libfreetype6-dev libpng12-dev liblapack-dev libblas-dev gfortran cmake libboost-python-dev liblzma-dev libjpeg-dev python-virtualenv",
-    "sudo pip install file-metadata",
+    "sudo pip install file-metadata --upgrade",
     "python -c'import file_metadata; print file_metadata.__version__'",
     ]
     install(ctx, job)
