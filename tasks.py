@@ -6,15 +6,15 @@
 # https://commons.wikimedia.org/wiki/User:DrTrigon/file-metadata
 #
 # Inspired by https://github.com/pypa/get-pip/blob/master/get-pip.py
-# http://www.pyinvoke.org/
+#         and http://www.pyinvoke.org/
 
 from invoke import task
 
 # Install procedure
 def install(ctx, job):
     for cmd in job:
-        print ("--- " * 10), "\n", cmd, "\n", ("--- " * 10)
-        raw_input("[Enter] to continue, [Ctrl]+C to stop ...")
+        print "\n", ("--- " * 10), "\n", cmd, "\n", ("--- " * 10)
+        raw_input("[Enter] to continue or [Ctrl]+C to stop ...")
         ctx.run(cmd)
 
 # Test through system package management
