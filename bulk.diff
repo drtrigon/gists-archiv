@@ -1,0 +1,28 @@
+--- old/bulk.py         2016-06-27 19:25:39.851142829 +0100
++++ core/bulk.py        2016-06-27 19:52:32.029882987 +0100
+@@ -23,7 +23,9 @@
+ from file_metadata.generic_file import GenericFile
+ from file_metadata.image.image_file import ImageFile
+ from file_metadata.utilities import download
+-from tests import is_travis, is_toolserver, CACHE_DIR
++#from tests import is_travis, is_toolserver, CACHE_DIR
++is_travis, is_toolserver = lambda: False, lambda: False
++CACHE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'files')  # from __init__.py
+ 
+ try:
+     import pywikibot
+@@ -132,11 +134,11 @@
+                 txt.append("* '''Closest Pantone color''': " +
+                            col_info['Color:ClosestLabeledColor'])
+                 txt.append("* '''Edge Ratio''': " +
+-                           col_info['Color:EdgeRatio'])
++                           unicode(col_info['Color:EdgeRatio']))
+                 txt.append("* '''Number of grey shades used''': " +
+-                           col_info['Color:NumberOfGreyShades'])
++                           unicode(col_info['Color:NumberOfGreyShades']))
+                 txt.append("* '''Percent of the palette occuring frequently''': " +
+-                           col_info['Color:PercentFrequentColors'])
++                           unicode(col_info['Color:PercentFrequentColors']))
+ 
+             # Fill second column (image cell) for ImageFiles
+             if _file.fetch('ndarray').ndim in (2, 3):
