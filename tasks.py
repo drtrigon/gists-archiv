@@ -82,7 +82,7 @@ def install_file_metadata_git(ctx, yes=False):
     job = [
     "git clone https://github.com/AbdealiJK/file-metadata.git",
     "sudo apt-get %(yes)s install libzbar-dev" % p,
-    "cd file-metadata/; sudo pip install -r requirements.txt --upgrade",
+    "cd file-metadata/; sudo pip install . --upgrade",
     "cd file-metadata/; python -c'import file_metadata; print file_metadata.__version__'",
     "cd core/; ln -s ../file-metadata/file_metadata file_metadata",
     ]
@@ -93,6 +93,7 @@ def install_file_metadata_git(ctx, yes=False):
 def install_pywikibot(ctx, yes=False):
     p   = params(yes=yes)
     job = [
+    "sudo apt-get %(yes)s update" % p,
     "sudo apt-get %(yes)s install git git-review" % p,
     "git clone --branch 2.0 --recursive https://gerrit.wikimedia.org/r/pywikibot/core.git",
     "cd core/; python pwb.py basic",    # issue: ctx.run stops after this line
