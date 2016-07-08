@@ -82,6 +82,7 @@ def install_file_metadata_git(ctx, yes=False):
     job = [
     "git clone https://github.com/AbdealiJK/file-metadata.git",
     "sudo apt-get %(yes)s install libzbar-dev" % p,
+    "sudo apt-get %(yes)s install libimage-exiftool-perl libav-tools" % p,
     "cd file-metadata/; sudo pip install . --upgrade",
     "cd file-metadata/; python -c'import file_metadata; print file_metadata.__version__'",
     "cd core/; ln -s ../file-metadata/file_metadata file_metadata",
