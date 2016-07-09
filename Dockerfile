@@ -24,7 +24,7 @@ RUN apt-get update
 RUN apt-get --yes install python-pip
 
 # Installation of file-metadata etc.
-RUN pip install invoke
+RUN pip install invoke wget
 RUN wget https://gist.githubusercontent.com/drtrigon/2dcbc5fbac1e00f0f89dec9343994e48/raw/d755448ebfbcbf156ee0b01289c34583db31b1d6/tasks.py
 
 # github
