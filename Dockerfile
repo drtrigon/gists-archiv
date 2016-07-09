@@ -18,10 +18,10 @@ RUN apt-get update
 
 ## Setup a VirtualBox with osboxes.org Kubuntu_14.04.3-64bit.7z (see http://www.osboxes.org/kubuntu/)...
 #RUN apt-get update
-#RUN apt-get upgrade
-#RUN apt-get autoremove
+#RUN apt-get --yes upgrade
+#RUN apt-get --yes autoremove
 # vvv not needed look into tasks.py and use the correct install procedure for pip
-RUN apt-get install python-pip
+RUN apt-get --yes install python-pip
 
 # Installation of file-metadata etc.
 RUN pip install invoke
