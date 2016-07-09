@@ -20,6 +20,8 @@ RUN apt-get update
 #RUN apt-get update
 #RUN apt-get upgrade
 #RUN apt-get autoremove
+# vvv not needed look into tasks.py and use the correct install procedure for pip
+RUN apt-get install python-pip
 
 # Installation of file-metadata etc.
 RUN pip install invoke
