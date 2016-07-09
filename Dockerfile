@@ -21,7 +21,8 @@ RUN apt-get update
 #RUN apt-get --yes upgrade
 #RUN apt-get --yes autoremove
 # vvv not needed look into tasks.py and use the correct install procedure for pip
-RUN apt-get --yes install python-pip wget
+RUN apt-get --yes install python-pip
+RUN apt-get --yes install wget
 
 # Installation of file-metadata etc.
 RUN pip install invoke
