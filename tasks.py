@@ -123,8 +123,8 @@ def install_docker_container(ctx, yes=False):
     "echo \"deb https://apt.dockerproject.org/repo ubuntu-trusty main\" | sudo tee /etc/apt/sources.list.d/docker.list" % p,
     "sudo apt-get %(yes)s update" % p,
     "sudo apt-get %(yes)s install docker-engine" % p,
-    "sudo service docker start" % p,
+    #"sudo service docker start" % p,
     "wget https://gist.githubusercontent.com/drtrigon/741125760f46cb3c09e935f0c99a3a98/raw/0f381ec752b61081f1164d8fefaa6a3e07d83936/Dockerfile.ubuntu; mv Dockerfile.ubuntu Dockerfile" % p,
-    "sudo docker build -t gsoc_catimages_test ." % p,
+    #"sudo docker build -t gsoc_catimages_test ." % p,
     ]
     install(ctx, job, yes=yes)
