@@ -9,7 +9,7 @@
 #        $ invoke install_file_metadata_pip install_pywikibot install_file_metadata_bot; invoke install_file_metadata_bot
 #        $ invoke install_pywikibot install_file_metadata_git install_file_metadata_bot; invoke install_file_metadata_git install_file_metadata_bot
 #        $ invoke install_pywikibot --yes install_file_metadata_git --yes; invoke install_file_metadata_git --yes
-#        $ 
+#        $ invoke install_docker_container
 #
 # Inspired by https://github.com/pypa/get-pip/blob/master/get-pip.py
 #         and http://www.pyinvoke.org/
