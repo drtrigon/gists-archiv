@@ -9,7 +9,7 @@
 #        $ invoke install_file_metadata_pip install_pywikibot install_file_metadata_bot; invoke install_file_metadata_bot
 #        $ invoke install_pywikibot install_file_metadata_git install_file_metadata_bot; invoke install_file_metadata_git install_file_metadata_bot
 #        $ invoke install_pywikibot --yes install_file_metadata_git --yes; invoke install_file_metadata_git --yes
-#        $ invoke install_docker_container --yes; sudo docker build -t gsoc_catimages_test .
+#        $ invoke install_docker --yes
 #
 # Inspired by https://github.com/pypa/get-pip/blob/master/get-pip.py
 #         and http://www.pyinvoke.org/
@@ -114,7 +114,7 @@ def install_file_metadata_bot(ctx, yes=False):
 
 # Install Docker container
 @task
-def install_docker_container(ctx, yes=False):
+def install_docker(ctx, yes=False):
     p   = params(yes=yes)
     job = [
     "sudo apt-get %(yes)s update" % p,
@@ -124,7 +124,5 @@ def install_docker_container(ctx, yes=False):
     "sudo apt-get %(yes)s update" % p,
     "sudo apt-get %(yes)s install docker-engine" % p,
     #"sudo service docker start" % p,
-    "wget https://gist.githubusercontent.com/drtrigon/741125760f46cb3c09e935f0c99a3a98/raw/73d50a1681f8cf61638d53987896bc7312d60403/Dockerfile.ubuntu; mv Dockerfile.ubuntu Dockerfile" % p,
-    #"sudo docker build -t gsoc_catimages_test ." % p,
     ]
     install(ctx, job, yes=yes)
