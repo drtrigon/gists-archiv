@@ -9,6 +9,7 @@
 #        $ invoke install_file_metadata_pip install_pywikibot install_file_metadata_bot; invoke install_file_metadata_bot
 #        $ invoke install_pywikibot install_file_metadata_git install_file_metadata_bot; invoke install_file_metadata_git install_file_metadata_bot
 #        $ invoke install_pywikibot --yes install_file_metadata_git --yes; invoke install_file_metadata_git --yes
+#        $ 
 #
 # Inspired by https://github.com/pypa/get-pip/blob/master/get-pip.py
 #         and http://www.pyinvoke.org/
@@ -108,5 +109,22 @@ def install_file_metadata_bot(ctx, yes=False):
     job = [
     "sudo apt-get %(yes)s install libmagickwand-dev" % p,
     #"cd core/; wget https://gist.githubusercontent.com/AbdealiJK/a94fc0d0445c2ad715d9b1b95ec2ba03/raw/1dcd1fb8c168608c28e20ff50e9284700f61b90d/file_metadata_bot.py",
+    ]
+    install(ctx, job, yes=yes)
+
+# Install Docker container
+@task
+def install_docker_container(ctx, yes=False):
+    p   = params(yes=yes)
+    job = [
+    "sudo apt-get %(yes)s update" % p,
+    "sudo apt-get %(yes)s upgrade" % p,
+    "sudo apt-key adv --keyserver hkp://pgp.mit.edu:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D" % p,
+    "echo \"deb https://apt.dockerproject.org/repo ubuntu-trusty main\" | sudo tee /etc/apt/sources.list.d/docker.list" % p,
+    "sudo apt-get %(yes)s update" % p,
+    "sudo apt-get %(yes)s install docker-engine" % p,
+    "sudo service docker start" % p,
+    "wget https://gist.githubusercontent.com/drtrigon/741125760f46cb3c09e935f0c99a3a98/raw/0f381ec752b61081f1164d8fefaa6a3e07d83936/Dockerfile.ubuntu; mv Dockerfile.ubuntu Dockerfile" % p,
+    "sudo docker build -t gsoc_catimages_test ." % p,
     ]
     install(ctx, job, yes=yes)
