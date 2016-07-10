@@ -57,5 +57,7 @@ RUN pip install -r /opt/file-metadata/test-requirements.txt --upgrade
 # Install package
 RUN pip install /opt/file-metadata --upgrade
 
-# test ...
+# Check operation
 RUN python -c'import file_metadata; print file_metadata.__version__'
+
+# Run test as wished ... may be do unittests or run a bot script
