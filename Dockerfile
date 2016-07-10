@@ -1,13 +1,13 @@
 ############################################################
-# Dockerfile to build gsoc-catimages container images (trivial)
-# Based on Ubuntu
+# Dockerfile to build gsoc-catimages container image
+# Based on Ubuntu resp. file_metadata_0.1.0.dev99999999999999
 ############################################################
 
 # Set the base image to Ubuntu
-FROM ubuntu:14.04
+FROM file_metadata_0.1.0.dev99999999999999
 
 # File Author / Maintainer
-MAINTAINER Example DrTrigon
+MAINTAINER DrTrigon <dr.trigon@surfeu.ch>
 
 # Update the repository sources list
 RUN apt-get update
@@ -16,30 +16,24 @@ RUN apt-get update
 # Install gsoc-catimages Following the Instructions at Wikipedia Commons
 # Ref: https://commons.wikimedia.org/wiki/User:DrTrigon/file-metadata
 
-## Setup a VirtualBox with osboxes.org Kubuntu_14.04.3-64bit.7z (see http://www.osboxes.org/kubuntu/)...
-#RUN apt-get update
-#RUN apt-get --yes upgrade
-#RUN apt-get --yes autoremove
-# vvv not needed look into tasks.py and use the correct install procedure for pip
-RUN apt-get --yes install python-pip
-RUN apt-get --yes install wget
+# Installation of pywikibot
+#RUN git clone --branch 2.0 --recursive https://gerrit.wikimedia.org/r/pywikibot/core.git /opt/pywikibot-core
+#    "cd core/; python pwb.py basic",    # issue: ctx.run stops after this line
 
-# Installation of file-metadata etc.
-RUN pip install invoke
-RUN wget https://gist.githubusercontent.com/drtrigon/2dcbc5fbac1e00f0f89dec9343994e48/raw/d755448ebfbcbf156ee0b01289c34583db31b1d6/tasks.py
+# Setup of simple_bot.py
+#RUN apt-get -y install libmagickwand-dev
+#    #"cd core/; wget https://gist.githubusercontent.com/AbdealiJK/a94fc0d0445c2ad715d9b1b95ec2ba03/raw/1dcd1fb8c168608c28e20ff50e9284700f61b90d/file_metadata_bot.py",
+#RUN python pwb.py file_metadata/wikibot/simple_bot.py -cat:SVG_files -limit:5
 
-# github
-RUN invoke install_pywikibot --yes install_file_metadata_git --yes; invoke install_file_metadata_git --yes
+# Setup of bulk.py
+RUN apt-get install python-opencv
+RUN pip install retry
+RUN wget https://raw.githubusercontent.com/AbdealiJK/file-metadata/95cc2abb3506608266b1faf0da0722433ad6b03b/tests/bulk.py
+RUN ln -s /opt/file-metadata/tests tests
+RUN python bulk.py -search:'eth-bib' -limit:5 -logname:test -dryrun:1
 
 ##################### INSTALLATION END #####################
 
-RUN echo DONE
+# Run tests here ... may be do unittests or run a bot script
 
-## Expose the default port
-#EXPOSE 27017
-#
-## Default port to execute the entrypoint (MongoDB)
-#CMD ["--port 27017"]
-#
-## Set default container command
-#ENTRYPOINT usr/bin/mongod
+RUN echo DONE
