@@ -1,0 +1,54 @@
+[
+  {
+    "url": "https://api.github.com/gists/9f6c750eebcd039ae4401087e85dd44f/comments/1822122",
+    "id": 1822122,
+    "user": {
+      "login": "drtrigon",
+      "id": 18975831,
+      "avatar_url": "https://avatars.githubusercontent.com/u/18975831?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/drtrigon",
+      "html_url": "https://github.com/drtrigon",
+      "followers_url": "https://api.github.com/users/drtrigon/followers",
+      "following_url": "https://api.github.com/users/drtrigon/following{/other_user}",
+      "gists_url": "https://api.github.com/users/drtrigon/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/drtrigon/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/drtrigon/subscriptions",
+      "organizations_url": "https://api.github.com/users/drtrigon/orgs",
+      "repos_url": "https://api.github.com/users/drtrigon/repos",
+      "events_url": "https://api.github.com/users/drtrigon/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/drtrigon/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "created_at": "2016-07-09T18:44:11Z",
+    "updated_at": "2016-07-10T12:49:25Z",
+    "body": "https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-getting-started\r\nhttps://www.digitalocean.com/community/tutorials/docker-explained-using-dockerfiles-to-automate-building-of-images\r\nhttp://stackoverflow.com/questions/24395846/docker-official-ubuntu-14-04-image\r\n\r\nhttps://github.com/AbdealiJK/file-metadata/blob/ajk/docker/Dockerfile.ubuntu\r\nhttps://gist.github.com/drtrigon/741125760f46cb3c09e935f0c99a3a98\r\n\r\nInstall / setup docker on ubuntu 14.04 VM:\r\n```\r\n$ sudo apt-get update\r\n$ sudo apt-get -y upgrade\r\n$ sudo apt-key adv --keyserver hkp://pgp.mit.edu:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D\r\n$ echo \"deb https://apt.dockerproject.org/repo ubuntu-trusty main\" | sudo tee /etc/apt/sources.list.d/docker.list\r\n$ sudo apt-get update\r\n$ sudo apt-get install docker-engine\r\n```\r\n\r\nRun docker service if needed \r\n```\r\n$ sudo docker -d &\r\n```\r\nor better:\r\n```\r\n$ sudo service docker start\r\n```\r\n\r\nPlay with docker, get an ubuntu image for playing:\r\n```\r\n$ sudo docker info\r\n$ sudo docker version\r\n$ sudo docker search ubuntu\r\n$ sudo docker pull ubuntu\r\n$ sudo docker pull ubuntu:14.04\r\n$ sudo docker pull ubuntu:trusty\r\n$ sudo docker run -it ubuntu:14.04 /bin/bash\r\n```\r\n\r\nBuild Dockerfile to create image/container:\r\n```\r\n$ wget https://gist.githubusercontent.com/drtrigon/9f6c750eebcd039ae4401087e85dd44f/raw/fb6008a19ed9ce2a8667d7bfb33c15c55b20a68e/Dockerfile\r\n$ sudo docker build -t gsoc_catimages_test .\r\n```\r\n"
+  },
+  {
+    "url": "https://api.github.com/gists/9f6c750eebcd039ae4401087e85dd44f/comments/1822737",
+    "id": 1822737,
+    "user": {
+      "login": "drtrigon",
+      "id": 18975831,
+      "avatar_url": "https://avatars.githubusercontent.com/u/18975831?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/drtrigon",
+      "html_url": "https://github.com/drtrigon",
+      "followers_url": "https://api.github.com/users/drtrigon/followers",
+      "following_url": "https://api.github.com/users/drtrigon/following{/other_user}",
+      "gists_url": "https://api.github.com/users/drtrigon/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/drtrigon/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/drtrigon/subscriptions",
+      "organizations_url": "https://api.github.com/users/drtrigon/orgs",
+      "repos_url": "https://api.github.com/users/drtrigon/repos",
+      "events_url": "https://api.github.com/users/drtrigon/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/drtrigon/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "created_at": "2016-07-11T06:21:11Z",
+    "updated_at": "2016-07-11T06:21:11Z",
+    "body": "became obsolete due to github fork linked to automated docker build:\r\nhttps://github.com/drtrigon/catimages-gsoc\r\nhttps://hub.docker.com/r/drtrigon/catimages-gsoc/builds/"
+  }
+]
