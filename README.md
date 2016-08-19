@@ -29,6 +29,7 @@ $ git config user.email "dr.trigon@surfeu.ch"
 $ git config user.name "drtrigon"
 $ git merge b7d367514745715fff332b652349f222/master
 $ git remote rm b7d367514745715fff332b652349f222
+$ git status
 $ git push
 ```
 ```
