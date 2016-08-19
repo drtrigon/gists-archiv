@@ -1,0 +1,28 @@
+[
+  {
+    "url": "https://api.github.com/gists/b7d367514745715fff332b652349f222/comments/1840941",
+    "id": 1840941,
+    "user": {
+      "login": "drtrigon",
+      "id": 18975831,
+      "avatar_url": "https://avatars.githubusercontent.com/u/18975831?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/drtrigon",
+      "html_url": "https://github.com/drtrigon",
+      "followers_url": "https://api.github.com/users/drtrigon/followers",
+      "following_url": "https://api.github.com/users/drtrigon/following{/other_user}",
+      "gists_url": "https://api.github.com/users/drtrigon/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/drtrigon/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/drtrigon/subscriptions",
+      "organizations_url": "https://api.github.com/users/drtrigon/orgs",
+      "repos_url": "https://api.github.com/users/drtrigon/repos",
+      "events_url": "https://api.github.com/users/drtrigon/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/drtrigon/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "created_at": "2016-08-03T08:31:42Z",
+    "updated_at": "2016-08-03T08:31:42Z",
+    "body": "Became obsolete due to latest commits to pywikibot-catimages/file-metadata:master by AbdealiJK."
+  }
+]
