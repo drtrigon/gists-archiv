@@ -1,0 +1,28 @@
+[
+  {
+    "url": "https://api.github.com/gists/a1945629d1e7d7f566045629a43c0b06/comments/1812221",
+    "id": 1812221,
+    "user": {
+      "login": "drtrigon",
+      "id": 18975831,
+      "avatar_url": "https://avatars.githubusercontent.com/u/18975831?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/drtrigon",
+      "html_url": "https://github.com/drtrigon",
+      "followers_url": "https://api.github.com/users/drtrigon/followers",
+      "following_url": "https://api.github.com/users/drtrigon/following{/other_user}",
+      "gists_url": "https://api.github.com/users/drtrigon/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/drtrigon/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/drtrigon/subscriptions",
+      "organizations_url": "https://api.github.com/users/drtrigon/orgs",
+      "repos_url": "https://api.github.com/users/drtrigon/repos",
+      "events_url": "https://api.github.com/users/drtrigon/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/drtrigon/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "created_at": "2016-06-27T19:07:20Z",
+    "updated_at": "2016-06-27T19:07:42Z",
+    "body": "On how to create or apply the patch, see https://gist.github.com/drtrigon/0002517ea812cc707e6ea2ecaf23d9b3#gistcomment-1811102"
+  }
+]
