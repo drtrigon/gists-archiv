@@ -1,0 +1,12 @@
+diff -ru file_metadata-old/image/image_file.py file_metadata/image/image_file.py
+--- file_metadata-old/image/image_file.py       2016-07-18 18:34:51.409010611 +0000
++++ file_metadata/image/image_file.py   2016-07-18 18:36:07.833007498 +0000
+@@ -456,7 +456,7 @@
+             directory if directory is not None
+             else os.path.abspath(os.path.join(
+                 os.path.realpath(cv2.__file__),
+-                *([os.pardir] * 4 + ['share', 'OpenCV', 'haarcascades']))))
++                *([os.pardir] * 4 + ['share', 'opencv', 'haarcascades']))))
+         cascade = cv2.CascadeClassifier(os.path.join(directory, filename),)
+         features = cascade.detectMultiScale(image, **kwargs)
+         return features
