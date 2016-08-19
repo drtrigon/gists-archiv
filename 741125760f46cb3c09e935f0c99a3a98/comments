@@ -1,0 +1,80 @@
+[
+  {
+    "url": "https://api.github.com/gists/741125760f46cb3c09e935f0c99a3a98/comments/1822180",
+    "id": 1822180,
+    "user": {
+      "login": "drtrigon",
+      "id": 18975831,
+      "avatar_url": "https://avatars.githubusercontent.com/u/18975831?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/drtrigon",
+      "html_url": "https://github.com/drtrigon",
+      "followers_url": "https://api.github.com/users/drtrigon/followers",
+      "following_url": "https://api.github.com/users/drtrigon/following{/other_user}",
+      "gists_url": "https://api.github.com/users/drtrigon/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/drtrigon/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/drtrigon/subscriptions",
+      "organizations_url": "https://api.github.com/users/drtrigon/orgs",
+      "repos_url": "https://api.github.com/users/drtrigon/repos",
+      "events_url": "https://api.github.com/users/drtrigon/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/drtrigon/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "created_at": "2016-07-09T22:02:26Z",
+    "updated_at": "2016-07-10T12:45:47Z",
+    "body": "https://gist.github.com/drtrigon/9f6c750eebcd039ae4401087e85dd44f#gistcomment-1822122\r\n\r\nBuild:\r\n```\r\n$ wget https://gist.githubusercontent.com/drtrigon/741125760f46cb3c09e935f0c99a3a98/raw/0f381ec752b61081f1164d8fefaa6a3e07d83936/Dockerfile.ubuntu; mv Dockerfile.ubuntu Dockerfile\r\n$ sudo docker build -t file_metadata_0.1.0.dev99999999999999 .\r\n```\r\nTest:\r\n```\r\n$ sudo docker images\r\n$ sudo docker run -it file_metadata_0.1.0.dev99999999999999\r\nroot@e2020a542eb7:/# python -c'import file_metadata; print file_metadata.__version__'\r\n0.1.0.dev99999999999999\r\nroot@e2020a542eb7:/# exit\r\n```\r\n\r\nhttps://gist.github.com/drtrigon/2dcbc5fbac1e00f0f89dec9343994e48"
+  },
+  {
+    "url": "https://api.github.com/gists/741125760f46cb3c09e935f0c99a3a98/comments/1822395",
+    "id": 1822395,
+    "user": {
+      "login": "drtrigon",
+      "id": 18975831,
+      "avatar_url": "https://avatars.githubusercontent.com/u/18975831?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/drtrigon",
+      "html_url": "https://github.com/drtrigon",
+      "followers_url": "https://api.github.com/users/drtrigon/followers",
+      "following_url": "https://api.github.com/users/drtrigon/following{/other_user}",
+      "gists_url": "https://api.github.com/users/drtrigon/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/drtrigon/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/drtrigon/subscriptions",
+      "organizations_url": "https://api.github.com/users/drtrigon/orgs",
+      "repos_url": "https://api.github.com/users/drtrigon/repos",
+      "events_url": "https://api.github.com/users/drtrigon/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/drtrigon/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "created_at": "2016-07-10T12:31:50Z",
+    "updated_at": "2016-07-10T12:46:28Z",
+    "body": "Push built to docker.io:\r\n```\r\n$ sudo docker tag file_metadata_0.1.0.dev99999999999999 drtrigon/file_metadata_0.1.0.dev99999999999999\r\n$ sudo docker login\r\n(user: 'drtrigon', passwd: ...)\r\n$ sudo docker push drtrigon/file_metadata_0.1.0.dev99999999999999\r\n$ sudo docker logout\r\n```\r\nPull from docker.io:\r\n```\r\n$ sudo docker pull drtrigon/file_metadata_0.1.0.dev99999999999999\r\n```"
+  },
+  {
+    "url": "https://api.github.com/gists/741125760f46cb3c09e935f0c99a3a98/comments/1822560",
+    "id": 1822560,
+    "user": {
+      "login": "drtrigon",
+      "id": 18975831,
+      "avatar_url": "https://avatars.githubusercontent.com/u/18975831?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/drtrigon",
+      "html_url": "https://github.com/drtrigon",
+      "followers_url": "https://api.github.com/users/drtrigon/followers",
+      "following_url": "https://api.github.com/users/drtrigon/following{/other_user}",
+      "gists_url": "https://api.github.com/users/drtrigon/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/drtrigon/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/drtrigon/subscriptions",
+      "organizations_url": "https://api.github.com/users/drtrigon/orgs",
+      "repos_url": "https://api.github.com/users/drtrigon/repos",
+      "events_url": "https://api.github.com/users/drtrigon/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/drtrigon/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "created_at": "2016-07-10T21:11:29Z",
+    "updated_at": "2016-07-10T21:17:37Z",
+    "body": "became obsolete due to github fork linked to automated docker build:\r\nhttps://github.com/drtrigon/file-metadata\r\nhttps://hub.docker.com/r/drtrigon/file-metadata/builds/"
+  }
+]
