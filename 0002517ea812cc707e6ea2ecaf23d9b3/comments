@@ -1,0 +1,28 @@
+[
+  {
+    "url": "https://api.github.com/gists/0002517ea812cc707e6ea2ecaf23d9b3/comments/1811102",
+    "id": 1811102,
+    "user": {
+      "login": "drtrigon",
+      "id": 18975831,
+      "avatar_url": "https://avatars.githubusercontent.com/u/18975831?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/drtrigon",
+      "html_url": "https://github.com/drtrigon",
+      "followers_url": "https://api.github.com/users/drtrigon/followers",
+      "following_url": "https://api.github.com/users/drtrigon/following{/other_user}",
+      "gists_url": "https://api.github.com/users/drtrigon/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/drtrigon/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/drtrigon/subscriptions",
+      "organizations_url": "https://api.github.com/users/drtrigon/orgs",
+      "repos_url": "https://api.github.com/users/drtrigon/repos",
+      "events_url": "https://api.github.com/users/drtrigon/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/drtrigon/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "created_at": "2016-06-25T21:10:59Z",
+    "updated_at": "2016-06-25T21:46:02Z",
+    "body": "```\r\n$ mkdir old\r\n$ cp core/file_metadata_bot.py old/\r\n$ nano core/file_metadata_bot.py\r\n$ diff -Naur old/file_metadata_bot.py core/file_metadata_bot.py > file_metadata_bot.diff\r\n```\r\n```\r\n$ patch -p1 < file_metadata_bot.diff\r\n```\r\n```\r\n$ patch -p1 -R < file_metadata_bot.diff\r\n```"
+  }
+]

@@ -1,0 +1,21 @@
+--- old/file_metadata_bot.py       2016-06-25 21:56:13.988161114 +0100
++++ core/file_metadata_bot.py      2016-06-25 21:59:46.770490440 +0100
+@@ -32,7 +32,17 @@
+     txt = []
+     if isinstance(_file, ImageFile):
+         # Barcode detection is only for ImageFiles
+-        barcodes = _file.analyze_barcode()
++        barcodes = _file.analyze_barcode_zxing()
++        if len(barcodes) > 0:
++            txt.append("* '''Barcodes found:'''")
++        for i, bar in enumerate(barcodes):
++            txt.append("** Barcode " + str(i))
++            txt.append("*** Data: " + bar['data'])
++            txt.append("*** Format: " + str(bar['format']))
++            bbox = bar['bounding box']
++            txt.append("*** Position (left, top, width, height): "
++                       "{left}, {top}, {width}, {height}".format(**bbox))
++        barcodes = _file.analyze_barcode_zbar()
+         if len(barcodes) > 0:
+             txt.append("* '''Barcodes found:'''")
+         for i, bar in enumerate(barcodes):
