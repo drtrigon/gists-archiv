@@ -1,5 +1,5 @@
 # gists-archiv
-Archives of outdated gist repos
+Archives of outdated gist repos from https://gist.github.com/drtrigon
 
 # Instructions
 ```
